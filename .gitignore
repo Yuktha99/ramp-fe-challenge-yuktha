@@ -1,0 +1,64 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Build output
+dist/
+build/
+.DS_Store
+
+# Temporary files
+tmp/
+temp/
+
+# System files
+.DS_Store
+Thumbs.db
+*.swp
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Yarn
+.yarn-integrity
+.yarn-error.log
+
+# Coverage directory used by tools like jest
+coverage/
+*.lcov
+
+# Compiled source
+lib/
+*.js
+*.d.ts
+
+# Optional npm cache directory
+.npm/
+
+# Lint results
+lint-staged.config.js
+
+# Parcel-bundler cache (https://parceljs
