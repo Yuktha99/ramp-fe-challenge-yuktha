@@ -19,6 +19,14 @@ export function App() {
     [paginatedTransactions, transactionsByEmployee]
   )
 
+  const isViewMoreDisabled = () => {
+    return (
+      paginatedTransactionsUtils.loading ||
+      paginatedTransactions?.nextPage == null ||
+      transactionsByEmployee?.length === 0
+    )
+  }
+
   const loadAllTransactions = useCallback(async () => {
     setIsLoading(true)
     transactionsByEmployeeUtils.invalidateData()
@@ -62,11 +70,10 @@ export function App() {
           onChange={async (newValue) => {
             if (newValue === null) {
               return
-            }
-            else if (newValue.id == "") { // All Employees selected
+            } else if (newValue.id == "") {
+              // All Employees selected
               await loadAllTransactions()
-            }
-            else await loadTransactionsByEmployee(newValue.id)
+            } else await loadTransactionsByEmployee(newValue.id)
           }}
         />
 
@@ -78,7 +85,7 @@ export function App() {
           {transactions !== null && (
             <button
               className="RampButton"
-              disabled={paginatedTransactionsUtils.loading}
+              disabled={isViewMoreDisabled()}
               onClick={async () => {
                 await loadAllTransactions()
               }}
