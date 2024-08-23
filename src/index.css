@@ -150,7 +150,10 @@ hr.RampBreak--l {
 }
 
 .RampInputCheckbox--input {
-  display: none;
+  display: visible;
+  opacity: 0;
+  transform: translate(-16px);
+  cursor: pointer;
 }
 
 .RampButton {
