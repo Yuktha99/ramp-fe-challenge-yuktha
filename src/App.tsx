@@ -70,7 +70,7 @@ export function App() {
           onChange={async (newValue) => {
             if (newValue === null) {
               return
-            } else if (newValue.id == "") {
+            } else if (newValue.id === "") {
               // All Employees selected
               await loadAllTransactions()
             } else await loadTransactionsByEmployee(newValue.id)
